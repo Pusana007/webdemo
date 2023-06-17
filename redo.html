@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 1</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Sarabun&display=swap');
+        body {
+            background-color: rgb(255, 255, 255);
+        }
+        .center {
+            text-align: center;
+        }
+        h1 {
+            font-family: 'Sarabun', sans-serif;
+            font-size: 40px;
+        }
+        h2 {
+            font-family: 'Sarabun', sans-serif;
+            font-size: 30px;
+        }
+        button {
+            font-family: 'Sarabun', sans-serif;
+            font-size: small;
+            font-size: 18px;
+        }
+        p{
+            font-size: large;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1 class="center", id="header" style="color: black;">1. สวัสดีชาวโลก!</h1>
+    <div class="center"><button class="center"type="button"onclick="document.getElementById('header').style.color='red'">เปลี่ยนสี</button></div>
+    <p></p>
+
+<head>    
+    <div class="center"><h2>2. วันที่และเวลาปัจจุบัน</h2>
+    <p id="datetime"></p>
+    
+    <script>
+        document.getElementById("datetime").textContent = new Date().toLocaleString('th-TH', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+            second: 'numeric',
+            hour12: false,
+            timeZone: 'Asia/Bangkok'
+        });
+    </script></div>
+</head>
+
+    <div class="center">
+        <h1 class="center">3. แมวจะยืนหรือสไลด์?</h1>
+        <button onclick="document.getElementById('myImage').src='Idle.png'">แมวยืน</button>
+        <img id="myImage" src="Idle.png" style="width:300px">
+        <button onclick="document.getElementById('myImage').src='Slide.png'">แมวสไลด์</button>
+    </div>
+<head>
+    <title>ตารางและปุ่ม</title>
+    <style>
+        h1{
+           font-size: 15px;
+        }
+        table {
+            border-collapse: collapse;
+        }
+        th {
+            border: 1px solid black;
+            padding: 12px;
+            background-color: #F9E79F;
+        }
+        td {
+            border: 1px solid black;
+            padding: 12px;
+        }
+    </style>
+</head>
+<body>
+        <h1>ตารางและปุ่ม</h1>
+    <br/>
+        <button onclick="showTable()">เปิดตาราง</button>
+        <button onclick="hideTable()">ปิดตาราง</button>
+    <br/>
+        <table id="myTable" style="margin-left:left; margin-right: auto; text-align:auto; display: none;">
+        <caption>ตารางสินค้า</caption>
+            <tr>
+                <th>รายการที่ 1</th>
+                <th>รายการที่ 2</th>
+                <th>รายการที่ 3</th>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>16</td>
+                <td>32</td>
+            </tr>
+            <tr>
+                <td>64</td>
+                <td>128</td>
+                <td>256</td>
+            </tr>
+        </table>
+    <script>
+        function showTable() {
+            var table = document.getElementById("myTable");
+            table.style.display = "table";
+        }
+
+        function hideTable() {
+            var table = document.getElementById("myTable");
+            table.style.display = "none";
+        }
+    </script>
+</body>
+    <body>
+            <h1>คำนวณเลข</h1>
+        <label for="input1">Number #1:</label><br>
+        <input type="text" id = "input1"><br><br>
+
+        <label for="input2">Number #2:</label><br>
+        <input type="text" id="input2"><br><br>
+
+        <label for="input3">Number #3:</label><br>
+        <input type="text" id="input3"><br><br>
+
+        <button onclick="calculate()">Submit</button><br><br>
+
+        <div id="average"></div><br>
+        <div id="minValue"></div><br>
+        <div id="maxValue"></div><br>
+    </body>
+        <script>
+            function calculate() {
+            //   รับ input
+            var input1 = parseFloat(document.getElementById("input1").value);
+            var input2 = parseFloat(document.getElementById("input2").value);
+            var input3 = parseFloat(document.getElementById("input3").value);
+
+            //   ค่าเฉลี่ย
+            var average = (input1 + input2 + input3) / 3;
+
+            //   ค่าต่ำสุด
+            var minValue = Math.min(input1, input2, input3);
+
+            //   ค่าสูงสุด
+            var maxValue = Math.max(input1, input2, input3);
+
+            //   แสดงผลลัพธ์
+            document.getElementById("average").innerHTML = "ค่าเฉลี่ยคือ " + average.toFixed(0);
+            document.getElementById("maxValue").innerHTML = "ค่าสูงสุดคือ " + maxValue;
+            document.getElementById("minValue").innerHTML = "ค่าต่ำสุดคือ " + minValue;
+            }
+        </script> 
+    </body>
+</html>
